@@ -166,29 +166,29 @@ const Contact = () => {
                 <div className="contact-section-table">
                     <h2>More Works</h2>
                     <div className="container">
-                        <img src="./gallery/icons/instagram.png" className="socialimg" />
+                        <img src={`${backendaddress}/gallery/instagram.png`} className="socialimg" />
                         <p className="sitename"><a href="https://www.instagram.com/akki.graphics/" className="contact-anchor" target="_blank">Instagram</a></p>
                     </div>
                 </div>
                 <div className="contact-section-table">
                     <h2>Social</h2>
                     <div className="container">
-                        <img src="./gallery/icons/linkedin.png" className="socialimg" />
+                        <img src={`${backendaddress}/gallery/linkedin.png`} className="socialimg" />
                         <p className="sitename"><a href="https://www.linkedin.com/in/akki-graphics-2129ba217" className="contact-anchor" target="_blank">LinkedIn</a></p>
                     </div>
                     <div className="container">
-                        <img src="./gallery/icons/twitter.png" className="socialimg" />
+                        <img src={`${backendaddress}/gallery/twitter.png`} className="socialimg" />
                         <p className="sitename"><a href="https://twitter.com/akki_Graphics?s=09" className="contact-anchor" target="_blank">Twitter</a></p>
                     </div>
                     <div className="container">
-                        <img src="./gallery/icons/youtube.png" className="socialimg" />
+                        <img src={`${backendaddress}/gallery/youtube.png`} className="socialimg" />
                         <p className="sitename"><a href="https://www.youtube.com/@akkiGraphics" className="contact-anchor" target="_blank">Youtube</a></p>
                     </div>
                 </div>
                 <div className="contact-section-table">
                     <h2>Contact</h2>
                     <div className="container">
-                        <img src="./gallery/icons/mail.png" className="socialimg" />
+                        <img src={`${backendaddress}/gallery/mail.png`} className="socialimg" />
                         <p className="sitename">akkigraphics.business@gmail.com</p>
                     </div>
                 </div>
@@ -213,3 +213,4 @@ const Contact = () => {
 }
 
 export default Contact
+
