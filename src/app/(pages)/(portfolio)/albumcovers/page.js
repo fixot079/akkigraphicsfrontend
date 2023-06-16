@@ -30,7 +30,6 @@ const Albumcovers = () => {
     imageZoomLayout()
   })
 
-
     return (
         <>
           <div class="image-container">
@@ -46,3 +45,4 @@ const Albumcovers = () => {
 }
 
 export default Albumcovers
+
