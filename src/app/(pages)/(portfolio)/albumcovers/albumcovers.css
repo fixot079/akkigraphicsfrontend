@@ -1,164 +1,161 @@
-.main-anchor {
-    display: inline;
+.main-anchor{
+  display: inline;
+}
+
+.all{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-anchor:hover{
+  cursor: pointer;
+  filter: hue-rotate(-20deg) brightness(1.2);
+  transition: filter 1s ease;
+}
+
+.main-anchor:hover::before{
+  width: 0%;
+}
+
+.txt1{
+  color: var(--black);
+}
+
+.lc{
+  padding: 3rem 3.5rem;
+  padding-top: 1rem;
+}
+
+.image-container{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: none;
+}
+
+.overlay.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.images {
+  height: 250px;
+  width: 250px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: var(--themecolor);
+  font-family: inter;
+  font-size: 2rem;
+}
+
+.btn:active {
+  transform: scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+#previousbtn {
+  position: absolute;
+  left: 5rem;
+}
+
+#nextbtn {
+  position: absolute;
+  right: 5rem;
+}
+
+.overlay-image {
+  max-width: 90%;
+  max-height: 90%;
+  display: block;
+  margin: auto;
+}
+
+.txt1 {
+  font-size: 2.5rem;
+}
+
+.txt2 {
+  font-size: 2.3rem;
+}
+
+@media (max-width:1072px) {
+  .btn {
+    bottom: 3rem;
+  }
+}
+
+@media (max-width:768px) {
+  .lc {
+    padding: 0rem 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
   }
 
   .all {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-anchor:hover {
-    cursor: pointer;
-    filter: hue-rotate(-20deg) brightness(1.2);
-    transition: filter 1s ease;
-  }
-
-  .main-anchor:hover::before {
-    width: 0%;
-  }
-
-  .txt1 {
-    color: var(--black);
-  }
-
-  .lc {
-    padding: 3rem 3.5rem;
-    padding-top: 1rem;
-  }
-
-  .image-container {
-    padding-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    width: 100%;
-  }
-
-  .image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    /* object-fit: contain; */
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
-    display: none;
-  }
-
-  .overlay.show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    padding: 2rem 2rem;
   }
 
   .images {
-    height: 250px;
-    width: 250px;
+    height: 70%;
+    width: 70%;
   }
+}
 
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    background-color: var(--themecolor);
-    font-family: inter;
-    font-size: 2rem;
-  }
-
-  .btn:active {
-    transform: scale(1.2);
-    transition: all 0.2s ease-in-out;
-  }
-
-  #previousbtn {
-    position: absolute;
-    left: 5rem;
-  }
-
-  #nextbtn {
-    position: absolute;
-    right: 5rem;
-  }
-
-  .overlay-image {
-    max-width: 90%;
-    max-height: 90%;
-    display: block;
-    margin: auto;
+@media (max-width:501px) {
+  .images {
+    height: 100%;
+    width: 100%;
   }
 
   .txt1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   .txt2 {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width:480px) {
+  .all {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width:330px) {
+  #previousbtn {
+    left: 1rem;
   }
 
-
-  @media (max-width:1072px) {
-    .btn {
-      bottom: 3rem;
-    }
+  #nextbtn {
+    right: 1rem;
   }
-
-  @media (max-width:768px) {
-    .lc {
-      padding: 0rem 1.5rem;
-      padding-bottom: 1rem;
-      padding-top: 3rem;
-    }
-
-    .all {
-      padding: 2rem 2rem;
-    }
-
-    .images {
-      height: 70%;
-      width: 70%;
-    }
-  }
-
-  @media (max-width:501px) {
-    .images {
-      height: 100%;
-      width: 100%;
-    }
-
-    .txt1 {
-      font-size: 1.5rem;
-    }
-
-    .txt2 {
-      font-size: 1.3rem;
-    }
-
-  }
-
-  @media (max-width:480px) {
-    .all {
-      padding: 1rem 1rem;
-    }
-  }
-
-  @media (max-width:330px) {
-    #previousbtn {
-      left: 1rem;
-    }
-
-    #nextbtn {
-      right: 1rem;
-    }
-  }
+}
