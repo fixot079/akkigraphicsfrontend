@@ -29,8 +29,7 @@ const Loginboard = () => {
     }
 
     // Address
-    const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-    const backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+    const backendaddress = "https://akkigraphicsbackend.onrender.com"
 
     // Log the user in
     const handleLoginFormSubmit = (event) => {
