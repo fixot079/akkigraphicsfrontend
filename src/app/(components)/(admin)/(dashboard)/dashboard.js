@@ -1,11 +1,11 @@
 "use client"
 import React, { useState, useEffect, useContext } from 'react';
-import './dashboard.css';
-import Imagecomp from '../../(classic)/(image)/imagecomp';
-import { AmContexts } from '../(adminmain)/adminmain';
 import { useRouter } from 'next/navigation';
+import { AmContexts } from '../(adminmain)/adminmain';
 import { LoadingContext } from '../../../(pages)/(admin)/$admin/layout';
+import Imagecomp from '../../(classic)/(image)/imagecomp';
 import Spinner from '../../(classic)/(spinner)/spinner';
+import './dashboard.css';
 
 export const removeExtensionsFromName = (filename) => {
   var index = filename.lastIndexOf('.');
@@ -117,12 +117,10 @@ const Dashboard = (props) => {
       setMessengerName(res[0].name)
     })
   }
+
   if(localStorage.getItem("messagesIsAt")=="messages"){
     getMessagesOf(localStorage.getItem("messengerTarget"))
   }
-
-
-
 
   // Toggle Functions
   const toggleTc = () => {
@@ -177,6 +175,7 @@ const Dashboard = (props) => {
     }
   };
 
+  // Handle functions 
   const handleTextChange = () => {
     const data = {
       [textChangeTarget]: textChangeValue
@@ -330,9 +329,10 @@ const Dashboard = (props) => {
       }
   }
 
+  // Screen type rendering
   if (localStorage.getItem("screenType") == "gallery") {
 
-    if (dstype == "home" || dstype == "overview") {
+    if (dstype == "home" || dstype == "overview" || dstype == "management") {
       localStorage.setItem("dashboardOption", "logofolio")
       setDashboardOption("logofolio")
     }
@@ -407,7 +407,7 @@ const Dashboard = (props) => {
   }
 
   else if (localStorage.getItem("screenType") == "text") {
-    if (dstype == "home" || dstype == "overview") {
+    if (dstype == "home" || dstype == "overview" || dstype == "management") {
       if (dstype == "home") {
         localStorage.setItem("dashboardOption", "home")
         setDashboardOption("home")
@@ -415,6 +415,10 @@ const Dashboard = (props) => {
       else if (dstype == "overview") {
         localStorage.setItem("dashboardOption", "overview")
         setDashboardOption("overview")
+      }
+      else if (dstype == "management"){
+        localStorage.setItem("dashboardOption", "management")
+        setDashboardOption("management")
       }
     }
 
@@ -787,11 +791,7 @@ const Dashboard = (props) => {
       })}
      
     </div>
- 
-
     </>}
-
-
           </>
       }
     </>
