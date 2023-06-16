@@ -41,12 +41,9 @@
     color: white    ;
 }
 
-
-
-
 .optionitem{
     font-size: 2rem;
-    color: var(--themecolor);
+    color: rgb(54 190 255);
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
