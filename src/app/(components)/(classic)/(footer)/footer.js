@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Imagecomp from '../(image)/imagecomp';
 
 const Footer = () => {
-    const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-    const  backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+    const  backendaddress = "https://akkigraphicsbackend.onrender.com"
     const [footerLogo, setFooterLogo] = useState([])
     const [footerLogoIsLoading, setFooterLogoIsLoading] = useState(true)
     const [footerClass, setFooterClass] = useState("")
