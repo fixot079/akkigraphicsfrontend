@@ -11,13 +11,12 @@ import './globals.css'
 export const Contexts = createContext()
 
 
-
 // Theme functions 
 export function changeToDark(){
   document.documentElement.style.setProperty("--black","white")
   document.documentElement.style.setProperty("--white","#08021e")
   document.documentElement.style.setProperty("--darkbluecolor","rgb(212, 212, 212)")
-  document.documentElement.style.setProperty("--dspathbg","#182840")
+  document.documentElement.style.setProperty("--dspathbg","#143570")
   document.documentElement.style.setProperty("--admininpshadow","grey")
   document.documentElement.style.setProperty("--pichanged","var(--themecolor)")
   document.documentElement.style.setProperty("--lbshadow","rgb(0 114 255)")
@@ -39,7 +38,7 @@ export function changeToLight(){
   document.documentElement.style.setProperty("--black","#08021e")
   document.documentElement.style.setProperty("--white","white")
   document.documentElement.style.setProperty("--darkbluecolor","rgb(29, 35, 121)")
-  document.documentElement.style.setProperty("--dspathbg","#cadfff")
+  document.documentElement.style.setProperty("--dspathbg","#f0fdff")
   document.documentElement.style.setProperty("--admininpshadow","white")
   document.documentElement.style.setProperty("--pichanged","white")
   document.documentElement.style.setProperty("--lbshadow","white")
@@ -49,7 +48,7 @@ export function changeToLight(){
   document.documentElement.style.setProperty("--footercolor","rgb(88 194 255)")
   document.documentElement.style.setProperty("--hico1bg","rgb(234 237 255)")
   document.documentElement.style.setProperty("--hico2bg","rgb(252 232 255)")
-  document.documentElement.style.setProperty("--overviewbg","rgb(228 245 255)")
+  document.documentElement.style.setProperty("--overviewbg","rgb(243 251 255)")
   document.documentElement.style.setProperty("--placeholdercolor","#0000007a")
   document.documentElement.style.setProperty("--cpbg","white")
   document.documentElement.style.setProperty("--cpbuttonnbg","rgb(217 235 255)")
@@ -126,3 +125,4 @@ export default function RootLayout({ children }) {
     </Contexts.Provider>
   )
 }
+
