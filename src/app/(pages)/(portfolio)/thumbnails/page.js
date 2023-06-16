@@ -27,8 +27,7 @@ const Thumbnails = () => {
 
   // Use Effect
   useEffect(() => {
-  // Thumbnail place handling
-
+    // Thumbnail place handling
     const thumbnailIsAtInLocalStorage = localStorage.getItem("thumbnailIsAt")
     if (!thumbnailIsAtInLocalStorage) {
       localStorage.setItem("thumbnailIsAt", "options")
@@ -42,6 +41,7 @@ const Thumbnails = () => {
       setThumbnailOption(thumbnailOptionInLocalStorage)
     }
     
+    
       fetch(`${backendaddress}/getimages/coverlivestreamthumbnails`)
       .then(r => r.json())
       .then(data => {
@@ -49,7 +49,7 @@ const Thumbnails = () => {
         setLiveStreamThumbnailCover(images)
         setIsLoading1(false)
       })
-
+  
       fetch(`${backendaddress}/getimages/covermanipulatedthumbnails`)
       .then(r => r.json())
       .then(data => {
@@ -57,7 +57,7 @@ const Thumbnails = () => {
         setManipulatedThumbnailCover(images)
         setIsLoading2(false)
       })
-
+  
       fetch(`${backendaddress}/getimages/coverrealisticthumbnails`)
       .then(r => r.json())
       .then(data => {
@@ -65,22 +65,21 @@ const Thumbnails = () => {
         setRealisticThumbnailCover(images)
         setIsLoading3(false)
       })
-
+  
       fetch(`${backendaddress}/getimages/covermrbeasttypethumbnails`)
       .then(r => r.json())
       .then(data => {
         const images = data.images;
         setMrBeastTypeThumbnailCover(images)
         setIsLoading4(false)
-        console.log(liveStreamThumbnailCover,manipulatedThumbnailCover,realisticThumbnailCover,mrBeastTypeThumbnailCover)
       })
+   
     
-      
-  
   }, []); 
 
   useEffect(()=>{
-        // Fetch Thumbnails
+      // Fetch Thumbnails
+    
         fetch(`${backendaddress}/getimages/${thumbnailOption}`)
         .then(r => r.json())
         .then(data => {
@@ -89,37 +88,41 @@ const Thumbnails = () => {
           setImgArray(imageNames);
           setIsLoading(false)
         })
-  },[thumbnailOption])
+    
+     
+  }, [thumbnailOption])
 
   useEffect(()=>{
     imageZoomLayout()
   })
 
-    // Thumbnail go to function
-    const thumbnailGoTo = (place, placelocation) => {
-      localStorage.setItem("thumbnailIsAt", place)
-      setIsAt(place)
-      if(place=="thumbnails"){
-        setThumbnailOption(placelocation)
-        localStorage.setItem("thumbnailOption", placelocation)
-      } else {
-        localStorage.removeItem("thumbnailOption")
-      }
+  // Thumbnail go to function
+  const thumbnailGoTo = (place, placelocation) => {
+    localStorage.setItem("thumbnailIsAt", place)
+    setIsAt(place)
+    if(place=="thumbnails"){
+      setThumbnailOption(placelocation)
+      localStorage.setItem("thumbnailOption", placelocation)
+    } else {
+      localStorage.removeItem("thumbnailOption")
     }
+  }
 
     return (
         <>
           {isAt == "options" && 
           <>
-            {isLoading1 || isLoading2 || isLoading3 || isLoading3? <Spinner /> : <>
-            <div className="optionimgcontainer">
-            {!isLoading1 && <Imagecomp source={`${backendaddress}/images/coverlivestreamthumbnails/` + liveStreamThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "livestreamthumbnails")}} />}
-            {!isLoading2 && <Imagecomp source={`${backendaddress}/images/covermanipulatedthumbnails/` + manipulatedThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "manipulatedthumbnails")}} />}
-            {!isLoading3 && <Imagecomp source={`${backendaddress}/images/coverrealisticthumbnails/` + realisticThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "realisticthumbnails")}} />}
-            {!isLoading4 && <Imagecomp source={`${backendaddress}/images/covermrbeasttypethumbnails/` + mrBeastTypeThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "mrbeasttypethumbnails")}} />}
-           </div>
-            </>}
-           
+            {
+              isLoading1 || isLoading2 || isLoading3 || isLoading3? <Spinner /> :
+              <>
+                <div className="optionimgcontainer">
+                    {!isLoading1 && <Imagecomp source={`${backendaddress}/images/coverlivestreamthumbnails/` + liveStreamThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "livestreamthumbnails")}} />}
+                    {!isLoading2 && <Imagecomp source={`${backendaddress}/images/covermanipulatedthumbnails/` + manipulatedThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "manipulatedthumbnails")}} />}
+                    {!isLoading3 && <Imagecomp source={`${backendaddress}/images/coverrealisticthumbnails/` + realisticThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "realisticthumbnails")}} />}
+                    {!isLoading4 && <Imagecomp source={`${backendaddress}/images/covermrbeasttypethumbnails/` + mrBeastTypeThumbnailCover[0]} classes="optionimg" click={()=>{thumbnailGoTo("thumbnails", "mrbeasttypethumbnails")}} />}
+                </div>
+              </>
+            }
           </>
           }
 
@@ -148,7 +151,8 @@ const Thumbnails = () => {
               </>
           )}
               <div className="tocontainer">
-                <i className="fa-solid fa-left tarrowicon" onClick={()=>{thumbnailGoTo("options")}}></i>
+                <i className="fa-solid fa-left tarrowicon" 
+                  onClick={()=>{thumbnailGoTo("options")}}></i>
               </div>
           </div>
           }
@@ -157,3 +161,4 @@ const Thumbnails = () => {
 }
 
 export default Thumbnails
+
