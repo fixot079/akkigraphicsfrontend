@@ -12,7 +12,7 @@ const Logofolio = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   // Address
-  const  backendaddress = "https://akkigraphicsbackend.onrender.com"
+  const backendaddress = "https://akkigraphicsbackend.onrender.com"
 
   // Use Effect
   useEffect(() => {
@@ -38,7 +38,7 @@ const Logofolio = () => {
               {isLoading && <Spinner />}
               {!isLoading && 
               imgArray.map((imagesource)=>{
-                return <Imagecomp source={`${backendaddress}/images/logofolio/` + imagesource} classes="images" />
+                return <Imagecomp source={`${backendaddress}/images/logofolio/` + imagesource} classes="images" key={Date.now()+imagesource}/>
               })
               }
           </div>
