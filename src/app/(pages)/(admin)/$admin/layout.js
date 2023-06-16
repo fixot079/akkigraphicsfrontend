@@ -14,8 +14,7 @@ const AdminLayout = () => {
     const {isLoggedIn, setIsLoggedIn} = contexts
     const [infoFetched, setInfoFetched] = useState(false)
     const [info, setInfo] = useState("")
-    const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-    const backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+    const backendaddress = "https://akkigraphicsbackend.onrender.com"
       useEffect(()=>{
         fetch(`${backendaddress}/verify`, {
             method: 'POST',
