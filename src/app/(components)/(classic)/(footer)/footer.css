@@ -1,0 +1,19 @@
+footer{
+  display: flex;
+  background-color: var(--black);
+  color: white;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+  
+#footer-logo{
+  height: 3rem;
+  width: 3rem;
+}
+
+#footer {
+  flex-shrink: 0;
+  background-color: var(--footercolor) ;
+  gap: 0rem;
+}
