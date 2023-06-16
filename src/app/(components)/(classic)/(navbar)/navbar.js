@@ -20,8 +20,7 @@ const Navbar = () => {
     const [navbarOverlayClass, setNavbarOverlayClass] = useState('navbar-overlay navbar-dnone')
     const [isClicked, setIsClicked] = useState(false)
 
-    const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-    const backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+    const backendaddress = "https://akkigraphicsbackend.onrender.com"
     const [mainLogo, setMainLogo] = useState([])
     const [mainLogoIsLoading, setMainLogoIsLoading] = useState(true)
 
