@@ -4,8 +4,7 @@ import Spinner from '../(spinner)/spinner'
 import { removeExtensionsFromName } from '../../(admin)/(dashboard)/dashboard'
 import '../../../(pages)/overview/overview.css'
 const Clients = () => {
-  const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-  const  backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+  const  backendaddress = "https://akkigraphicsbackend.onrender.com"
     const [isLoading, setIsLoading] = useState(true)
     const [imgArray, setImgArray] = useState([])
 
