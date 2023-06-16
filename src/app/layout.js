@@ -1,5 +1,4 @@
 "use client"
-import { Inter } from 'next/font/google'
 import { useEffect, useState, createContext } from 'react'
 import { useRouter } from 'next/navigation';
 import Spinner from './(components)/(classic)/(spinner)/spinner';
@@ -8,14 +7,10 @@ import Navbar from './(components)/(classic)/(navbar)/navbar';
 import Footer from './(components)/(classic)/(footer)/footer';
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const Contexts = createContext()
 
-export const metadata = {
-  title: 'Akki Graphics',
-  description: 'Akki Graphics | Graphic Designer',
-}
+
 
 // Theme functions 
 export function changeToDark(){
@@ -119,7 +114,7 @@ export default function RootLayout({ children }) {
       <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css" />
       <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css" />
       </head>
-      <body className={inter.className}>
+      <body>
         {pageIsLoading ? <div className="loading-container"><Spinner color="white"/></div> : <>
               <section id="main">
                 <Navbar />
