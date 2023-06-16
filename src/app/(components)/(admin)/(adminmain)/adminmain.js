@@ -100,7 +100,7 @@ const Adminmain = () => {
     localStorage.setItem("screenType", "text")
     setScreenType("text")
     setDashboardOption("unset")
-    if (dashboardOption == "logofolio" || dashboardOption == "thumbnails" || dashboardOption == "albumcovers" || dashboardOption == "clients" || dashboardOption == "organisations" || dashboardOption == "coverforlogofolio" || dashboardOption == "coverforthumbnails" || dashboardOption == "coverforalbumcovers" || dashboardOption == "mainlogo" || dashboardOption == "footerlogo" || dashboardOption == "coverlivestreamthumbnails" || dashboardOption == "covermanipulatedthumbnails" || dashboardOption == "coverrealisticthumbnails" || dashboardOption == "covermrbeasttypethumbnails" || dashboardOption == "unset") {
+    if (dashboardOption == "logofolio" || dashboardOption == "thumbnails" || dashboardOption == "albumcovers" || dashboardOption == "clients" || dashboardOption == "organisations" || dashboardOption == "coverlogofolio" || dashboardOption == "coverthumbnails" || dashboardOption == "coveralbumcovers" || dashboardOption == "mainlogo" || dashboardOption == "footerlogo" || dashboardOption == "coverlivestreamthumbnails" || dashboardOption == "covermanipulatedthumbnails" || dashboardOption == "coverrealisticthumbnails" || dashboardOption == "covermrbeasttypethumbnails" || dashboardOption == "unset") {
       setIsAt("options")
       localStorage.setItem("isAt", "options")
     } else {
@@ -136,10 +136,11 @@ const Adminmain = () => {
           >
             <i className="fa-solid fa-house" onClick={handleHomeReturn}></i>
           </h1>
-          <p className="dspathtxt">
+          
             {
               screenType !== "unset" ? (
                 <>
+                <p className="dspathtxt">
                  { 
                  screenType !== "messages" ? (
                     <span onClick={handleOptionReturn}>{`/ ${screenType}`}</span>
@@ -162,11 +163,12 @@ const Adminmain = () => {
                       )
                     ) : null
                   ) : null :null}
+                    </p>
                 </>
               ) : null
             }
 
-          </p>
+        
         </div>
         <div className="am-container">
           {isAt == "screen" &&
@@ -211,6 +213,7 @@ const Adminmain = () => {
                     : <>
                       <option value="home" className='am-option' selected={localStorage.getItem("dashboardOption") == "home"}>Home page</option>
                       <option value="overview" className='am-option' selected={localStorage.getItem("dashboardOption") == "overview"}>Overview page</option>
+                      <option value="management" className='am-option' selected={localStorage.getItem("dashboardOption") == "management"}>Management page</option>
                     </>}
                 </>}
               </select>
@@ -223,3 +226,4 @@ const Adminmain = () => {
 }
 
 export default Adminmain
+
