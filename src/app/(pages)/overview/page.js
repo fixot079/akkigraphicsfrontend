@@ -10,7 +10,7 @@ import './overview.css'
 
 const Overview = () => {
   // Address
-  const  backendaddress = "https://akkigraphicsbackend.onrender.com"
+  const backendaddress = "https://akkigraphicsbackend.onrender.com"
 
   // States
   const [coverLogofolio, setCoverLogofolio] = useState([])
@@ -110,3 +110,4 @@ const Overview = () => {
 }
 
 export default Overview
+
