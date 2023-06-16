@@ -1,20 +1,28 @@
 'use client'
 import React, {useState, useEffect, useContext, createContext} from 'react'
+import Script from 'next/script'
 import { Contexts } from '../../../layout'
 import Loginboard from '../../../(components)/(admin)/(loginboard)/loginboard'
 import Spinner from '../../../(components)/(classic)/(spinner)/spinner'
-import './admin.css'
-import Script from 'next/script'
 import Adminmain from '../../../(components)/(admin)/(adminmain)/adminmain'
+import './admin.css'
 
 export const LoadingContext = createContext()
 
 const AdminLayout = () => {
+
+  // Context
     const contexts = useContext(Contexts)
     const {isLoggedIn, setIsLoggedIn} = contexts
+
+  // States
     const [infoFetched, setInfoFetched] = useState(false)
     const [info, setInfo] = useState("")
-    const backendaddress = "https://akkigraphicsbackend.onrender.com"
+
+  // Address
+   const backendaddress = "https://akkigraphicsbackend.onrender.com"
+
+  // Use Effect
       useEffect(()=>{
         fetch(`${backendaddress}/verify`, {
             method: 'POST',
@@ -32,19 +40,16 @@ const AdminLayout = () => {
            }
           })
       })
-   
-      
 
     return (
         
         <>
         <LoadingContext.Provider value={{infoFetched, setInfoFetched}}>
-           <div className="admin-container">
+          <div className="admin-container">
             {!infoFetched && <Spinner />}
             {infoFetched && isLoggedIn && <Adminmain />}
             {infoFetched && !isLoggedIn && <Loginboard />}
-            </div>
-            
+          </div>
         </LoadingContext.Provider>
         </>
     )
