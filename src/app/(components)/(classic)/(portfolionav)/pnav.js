@@ -1,4 +1,5 @@
 import React from 'react'
+import './pnav.css'
 
 const Portfolionavigation = (props) => {
     const styles = props.styles
@@ -22,3 +23,4 @@ const Portfolionavigation = (props) => {
 }
 
 export default Portfolionavigation
+
