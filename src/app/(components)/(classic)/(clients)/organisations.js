@@ -6,8 +6,7 @@ import { removeExtensionsFromName } from '../../(admin)/(dashboard)/dashboard'
 import { getCaptionFromFileName } from '../../(admin)/(dashboard)/dashboard'
 
 const Organisations = () => {
-  const frontendaddress = process.env.NEXT_PUBLIC_FRONTEND_ADDRESS
-  const  backendaddress = process.env.NEXT_PUBLIC_BACKEND_ADDRESS
+  const  backendaddress = "https://akkigraphicsbackend.onrender.com"
     const [orgArray, setOrgArray] = useState([])
     const [orgIsLoading, setOrgIsLoading] = useState(true)
     useEffect(() => {
