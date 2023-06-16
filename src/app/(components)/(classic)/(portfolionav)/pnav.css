@@ -1,0 +1,10 @@
+.portfolio-navigation{
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+  
+ol{
+  display: flex;
+  padding: 3rem 0rem;
+}
