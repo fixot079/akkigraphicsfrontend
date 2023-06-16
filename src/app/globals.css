@@ -94,7 +94,7 @@ a:hover::before{
 }
 
 .dsurecontainer, .renamecontainer, .captioncontainer, .textchange-container, .contactpopcontainer{
-  z-index: 91;
+  z-index: 99;
 }
 
 .hero-section-images{
