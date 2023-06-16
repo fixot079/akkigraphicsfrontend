@@ -1,0 +1,71 @@
+.amtxt{
+    font-family: 'Poppins';
+    color: var(--themecolor);
+    font-size: 1.5rem;
+}
+
+.am-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.am-select{
+    padding: 10px 20px;
+    font-family: 'Poppins';
+    border: 3px solid var(--themecolor);
+    color: var(--black);
+    background: none;
+    margin: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.am-select:focus,
+.am-option:focus{
+    outline: none;
+}
+
+.am-option{
+    background: var(--amoptbg);
+    border: none;
+}
+
+.ambtn{
+    padding: 5px 20px;
+    background: var(--themecolor);
+    width: 40%;
+    border: none;
+    font-family: 'Poppins';
+    color: white    ;
+}
+
+
+
+
+.optionitem{
+    font-size: 2rem;
+    color: var(--themecolor);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--overviewbg);
+    border-radius: 0.6rem;
+    padding: 1rem;
+    width: 6rem;
+    margin: 0.5rem;
+}
+
+.optiontxt{
+    font-size: 1rem;
+    font-family: 'Inter';
+}
+
+.optionitemcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}

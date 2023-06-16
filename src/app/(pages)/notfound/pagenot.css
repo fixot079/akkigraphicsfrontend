@@ -1,0 +1,33 @@
+.notfoundcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-text{
+    color: var(--themecolor);
+    font-size: 2rem;
+    position: relative;
+    top: -3rem;
+}
+
+#notfoundimg{
+ height:25em;
+}
+
+
+@media (max-width:536px){
+    
+   #notfoundimg{
+    height:25em;
+    padding: 4rem 0rem;
+   }
+
+   .not-found-text{
+    color: var(--themecolor);
+    font-size: 2rem;
+    top: -4rem;
+    width: 90%;
+}
+}

@@ -1,0 +1,12 @@
+
+/* @media (max-width:768px) { */
+    .all {
+      padding: 2rem 2rem;
+    }
+
+  /* } */
+@media (max-width:480px) {
+    .all {
+      padding: 1rem 1rem;
+    }
+  }

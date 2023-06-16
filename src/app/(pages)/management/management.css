@@ -1,0 +1,17 @@
+.mtxt1{
+    color: var(--themecolor);
+}
+.mtxt2{
+    color: var(--black);
+}
+
+.managementsection{
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (max-width:934px){
+    .managementsection{
+        margin: 1rem auto;
+    }
+}

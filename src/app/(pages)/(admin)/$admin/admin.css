@@ -1,0 +1,10 @@
+.admin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}

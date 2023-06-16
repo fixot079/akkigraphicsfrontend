@@ -1,0 +1,128 @@
+.admin-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.admintxt{
+    /* animation:changetextcolor 4s infinite; */
+    color: var(--themecolor);
+    transition: all 1s ease;
+    font-size: 2rem;
+}
+
+.loginerrtxt{
+    color: rgb(255, 0, 0);
+    border-radius: 2px;
+}
+
+.vhidden{
+    visibility: hidden;
+}
+
+@keyframes changetextcolor {
+    0%,100%{
+        color: var(--themecolor);
+        transition: all 1s ease;
+    }
+    50%{
+        color: aqua;
+        transition:all 1s ease ;
+    }
+}
+
+
+.login-form{
+    margin: 0rem 0rem;
+    padding:0rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+}
+
+
+.password-input, .password-input-changed, .password-input-error{
+    align-self: center;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--themecolor);
+    color: var(--themecolor);
+    border-radius: 0.4rem;
+    height: 2rem;
+    min-width: 20rem;
+    font-size: 1rem;
+    transition: box-shadow 0.5s ease;
+}
+.password-input-error{
+    border: 1px solid red;
+    box-shadow: 0px 12px 36px -6px rgb(255, 52, 52);
+}
+.password-input{
+    box-shadow: 0px 12px 36px -6px var(--admininpshadow);
+}
+
+.password-input-changed{
+    box-shadow: 0px 12px 36px -6px var(--pichanged);
+}
+
+.password-input:focus, .password-input-changed:focus, .password-input-error:focus{
+   outline: none;
+}
+
+.btn-container{
+    align-self: center;
+    width: 50%;
+    padding: 0rem 0rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+}
+
+.login-btn{
+    background-color: var(--themecolor);
+    border: none;
+    font-family: 'Poppins';
+    border-radius: 0.5rem;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    align-self: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0px 0px 30px 0px var(--lbshadow);
+    transition: all 1s ease;
+}
+  
+.login-btn:hover{
+    background-color: rgb(2 83 153);
+    box-shadow: 0px 0px 30px 0px var(--lbshadowhover);
+    transition: all 0.5s ease;
+}
+
+@media (max-width:768px){
+    .admin-container{
+        flex-wrap: wrap;
+        margin: 2rem 0rem;
+    }
+}
+
+@media (max-width:474px){
+
+    .login-form {
+        width: 90%;
+    }
+    .admintxt{
+        font-size: 1.7rem;
+        width: 100%;
+    }
+    .loginerrtxt{
+        margin-left: 1rem;
+    }
+    .password-input, .password-input-changed, .password-input-error{
+        min-width: 0;
+        width: 90%;
+    }
+}
