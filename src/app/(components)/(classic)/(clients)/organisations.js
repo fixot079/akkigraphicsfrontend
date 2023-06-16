@@ -1,30 +1,30 @@
 import React, {useState, useEffect} from 'react'
-import Spinner from '../(spinner)/spinner'
-import Imagecomp from '../(image)/imagecomp'
 import { removeCaptionFromFileName } from '../../(admin)/(dashboard)/dashboard'
 import { removeExtensionsFromName } from '../../(admin)/(dashboard)/dashboard'
 import { getCaptionFromFileName } from '../../(admin)/(dashboard)/dashboard'
+import Spinner from '../(spinner)/spinner'
+import Imagecomp from '../(image)/imagecomp'
 
 const Organisations = () => {
-  const  backendaddress = "https://akkigraphicsbackend.onrender.com"
+  // Address
+  const backendaddress = "https://akkigraphicsbackend.onrender.com"
+
+  // States
     const [orgArray, setOrgArray] = useState([])
     const [orgIsLoading, setOrgIsLoading] = useState(true)
+
+  // Use Effect
     useEffect(() => {
         fetch(`${backendaddress}/getimages/organisations`)
         .then((response) => response.json())
         .then((data) => {
-          // Access the array of image names
           const imageNames = data.images;
     
-          // Process the image names as needed
           setOrgArray(imageNames);
           setOrgIsLoading(false)
-          
-        })
-        .catch((error) => {
-          console.error('Request failed:', error);
         })
     }, [])
+    
     return (
         <>
                {orgIsLoading &&  <Spinner key={Date.now()+Math.random()*9999}/>}
@@ -39,3 +39,4 @@ const Organisations = () => {
 }
 
 export default Organisations
+
