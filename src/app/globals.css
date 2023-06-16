@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
 }
-
-/* Defining variables for consistent use */
 
 :root{
   --themecolor:rgb(0, 162, 255);
@@ -16,7 +15,7 @@
   --huerotatedeg:0;
   --white:white;
   --black:black;
-  --dspathbg:#cadfff;
+  --dspathbg:#f0fdff;
   --admininpshadow:white;
   --pichanged:white;
   --lbshadow:white;
@@ -25,481 +24,29 @@
   --navoverlaybg:rgb(76 77 114 / 42%);
   --hico1bg:rgb(234 237 255);
   --hico2bg:rgb(252 232 255);
-  --overviewbg:rgb(228 245 255);
+  --overviewbg:rgb(243 251 255);
   --placeholdercolor:#0000007a;
-  /* --cpbg:rgb(0 16 36); */
   --cpbg:white;
   --cpbuttonbg:rgb(217 235 255);
-  }
-
-/* Styles for body */
-
-/* For footer to work */
+}
 
 body{
-min-height: 100vh;
-background-color: var(--white);
+  min-height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
 }
 
 #main{
-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
-
-#footer {
-flex-shrink: 0;
-background-color: var(--footercolor) ;
-gap: 0rem;
-}
-
-/* Other body styles */
-body {
-display: flex;
-flex-direction: column;
-}
-
-/* Underlining pnlmain */
-
-
-
-
-
-/* Defining 2 font classes */
 
 .ppins{
   font-family: 'Poppins', sans-serif;
 }
+
 .inter{
   font-family:'Inter'; 
-}
-
-/* CSS for navbar */
-
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0rem 4rem;
-  min-height: 4rem;
-  background-color: var(--white);
-  width: 100vw;
-}
-
-#navbar-logo{
-  height: 100px;
-  width: 100px;
-  transition: all 0.1s ease;
-}
-#navbar-logo:hover{
-transition: all 0.5s ease;
-transform:  scale(1.001) rotate(-5deg);
-}
-
-/* Shake Animation Keyframes (For navbar logo) */
-
-
-
-
-ul{
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-/* Adding flexibility to the list items ie anchor tags */
-
-li{
-  padding: 0rem 2rem;
-  display: flex;
-  align-items: center;
-}
-.theme-li{
-  padding: 0rem 1.5rem;
-  height: 3rem;
-  cursor: pointer;
-}
-
-
-
-a{
-  text-decoration: none;
-  color: var(--themecolor);
-}
-
-a{
-  position: relative;
-}
-
-a:active{
-color: aquamarine;
-}
-
-
-a::before {
-content: "";
-position: absolute;
-width: 0;
-height: 2px;
-bottom:0;
-left: 0;
-background-color: var(--themecolor);
-transition: width 0.2s ease-in-out;
-}
-
-a:hover::before {
-width: 100%;
-}
-
-.anchor-animation-disabled:hover::before{
-width: 0;
-}
-
-/* Styles for footer */
-
-footer{
-  display: flex;
-  background-color: var(--black);
-  color: white;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-}
-
-#footer-logo{
-  height: 3rem;
-  width: 3rem;
-}
-
-
-
-/* For portfolio-specefic navbar */
-.portfolio-navigation{
-  padding: 0rem 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-ol{
-  display: flex;
-  padding: 3rem 0rem;
-}
-
-.nico{
-  margin:0 0.3rem;
- }
-
-@media (max-width:934px){
-
-  .navbtns{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: auto;
-    gap: 1.5rem;
-    padding: 0rem 2rem;
-    padding-right: 0;
-  }
-
-/* For portfolio-specefic navbar */
-
-ol{
-  flex-direction: column;
-  padding: 2rem 0rem;
-  /* align-items: flex-start; */
-}
-li.portfolio-navigation-li{
-  padding: 0.5rem 0rem;
-  gap: 1rem;
-}
-li.portfolio-navigation-li:before{
-  content: "\2022\0020";
-  font-weight: lighter;
-}
-
-.portfolio-navigation{
-  justify-content: flex-start;
-  padding: 0rem 0rem;
-}
-
-  /* Making the navbar responsive for mobile devices */
-
- .navbar{
-   flex-direction: column;
-   align-items: flex-start;
-   padding: 0rem 0rem;
-   width: 100vw;
-   min-height: 4rem;
- }
-
- #navbar-logo{
-   align-self: flex-start;
-   height: 80px;
-   width: 80px;
- }
-
- ul{
-   flex-direction: column;
-   padding-top: 2rem;
-   background-color: transparent;
-   position: fixed;
-   top: 5rem;
-   background-color: var(--white);
-   z-index: 90;
-   height: 100%;
-   align-self: flex-end;
-   width: 70%;
- }
-
-
- /* Li is given full width so that it can bring all anchor tags in center */
- li.main-nav-li{
-  padding: 1.6rem;
-   width: 100%;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-   border-bottom: 1px solid rgb(212 212 212 / 46%);
- }
-
-
- li{
-  color: var(--black);
- }
-
- /* Creating same field for logo and hamburger menu  */
-
- .navbar-mains{
-   width: 100%;
-   display: flex;
-   justify-content: space-between;
-   position: fixed;
-   top: 0rem;
-   background-color: var(--white);
-   padding: 0rem 2.5rem;
-   z-index: 90;
-
-   
- }
-
-
-
- /* Styling hamburger menu */
- .navbar-menu-icon{
-  display: flex;
-  width: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1px;
-  margin-top: -0.5rem;
-  height: auto;
-  overflow: hidden;
- }
-
- .navbar-menu-icon-cross{
-  display: flex;
-  width: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  height: auto;
-  padding-bottom: 1rem;
-  margin-top: 0rem;
-  transition: margin-top 0.5s ease;
- }
- .bar{
-   height: 3px;
-   width: 40px;
-   background: var(--themecolor);
-   margin-top: 4px;
- }
-
-   /* Adding animation classes for bar1 */
-   .bar1rotate{
-       animation: bar1rotate 0.4s 1;
-       animation-fill-mode: forwards;
-     }
-     .bar1rotateback{
-       animation: bar1rotateback 0.4s 1;
-       animation-fill-mode: forwards;
-     }
-
-   /* Adding animation classes for bar3 */
- .bar3rotate{
-   animation: bar3rotate 0.4s 1;
-   animation-fill-mode: forwards;
- }
- .bar3rotateback{
-   animation: bar3rotateback 0.4s 1;
-   animation-fill-mode: forwards;
- }
-
- /* Making animation for hamburger menu bar */
-
- /* First bar (when becomes cross) */
-
- @keyframes bar1rotate {
-   0%{
-       transform: rotate(0deg);
-
-   }
-   100%{
-       transform: translateY(16px) translateX(-1px) rotate(45deg);
-
-   }
- }
-
- /* First bar (when becomes normal again) */
-
- @keyframes bar1rotateback {
-   0%{
-       transform: translateY(16px) translateX(-1px) rotate(45deg);
-
-   }
-   100%{
-       transform: rotate(0deg);
-
-   }
- }
-  
-
- /* Making invisible class for bar2 */
- 
- .hiddenformobile{
-   visibility: hidden;
- }
-
-
-   /* Third bar (when becomes cross) */
-
- @keyframes bar3rotate {
-   0%{
-       transform: rotate(0deg);
-
-   }
-   100%{
-       transform: translateY(-2px) rotate(-45deg);
-
-   }
- }
-   /* Third bar (when becomes normal again) */
-
- @keyframes bar3rotateback {
-   0%{
-       transform: translateY(-2px) rotate(-45deg);
-   }
-   100%{
-       transform: rotate(0deg);
-
-   }
- }
-
- /* Adding Slide animation for ul */
- @keyframes slideLeft {
-   0% {
-     transform: translateX(100%);
-   }
-   100% {
-     transform: translateX(0);
-   }
- }
-
- @keyframes slideRight {
-   from {
-     transform: translateX(0);
-   }
-   to {
-     transform: translateX(100%);
-   }
- }
-
- /* Making class to assign these animations to ul */
-
- .slideleft{
-   animation: slideLeft 0.4s forwards;
-   pointer-events: auto;
- }
- .slideRight{
-   animation: slideRight 0.7s forwards;
-   pointer-events: none;
- }
-
-
- .navbar-overlay{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--navoverlaybg);
-  display: flex;
-  z-index: 89;
- }
-} 
-
-.navbar-fadein{
-animation: navbar-fadein 0.5s forwards;
-}
-
-.navbar-fadeout{
-animation: navbar-fadeout 0.5s forwards;
-}
-
-.navbar-dnone{
-  display: none;
-}
-
-@keyframes navbar-fadein {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
-
-@keyframes navbar-fadeout {
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-
-@media (max-width:480px){
-  .navbar-mains {
-      padding: 0rem 1rem;
-    }
-
- 
-
-  .navmaintxt{
-    font-size: 1rem;
-    overflow: hidden;
-  }
-}
-@keyframes fadein {
-  0%{
-      opacity: 0;
-  }
-  100%{
-      opacity: 1;
-  }
-}
-
-.dsurecontainer, .renamecontainer, .captioncontainer, .textchange-container, .contactpopcontainer{
-  z-index: 91;
-}
-
-@media (min-width:769px){
-  .adminli{
-    background: var(--themecolor);
-    overflow: hidden;
-    border-radius: 50%;
-    padding: 1rem 1.2rem;
-    margin-top: 0.2rem;
-  }
 }
 
 .loading-container{
@@ -517,19 +64,52 @@ animation: navbar-fadeout 0.5s forwards;
   z-index: 100;
 }
 
-@media (max-width:1098px){
-  li{
-    padding: 0rem 1rem;
-  }
+a{
+  text-decoration: none;
+  color: var(--themecolor);
+  position: relative;
+}
+
+a:active{
+  color: aquamarine;
+}
+
+a::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom:0;
+  left: 0;
+  background-color: var(--themecolor);
+  transition: width 0.2s ease-in-out;
+}
+
+a:hover::before{
+  width: 100%;
+}
+
+.anchor-animation-disabled:hover::before{
+  width: 0;
+}
+
+.dsurecontainer, .renamecontainer, .captioncontainer, .textchange-container, .contactpopcontainer{
+  z-index: 91;
 }
 
 .hero-section-images{
   z-index: 90;
 }
 
+@media (max-width:934px){
+  ul, .navbar-mains{
+    z-index: 92;
+  }
 
-
-
+  .navbar-overlay{
+    z-index: 89;
+  }
+}
 
 
 
